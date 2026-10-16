@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fong Chin Wai (Vivi) — Data Science Portfolio | CISC7204</title>
+<meta name="description" content="Data science portfolio of Fong Chin Wai (Vivi), MSc Data Science (Artificial Intelligence Applications) student at the University of Macau. Coursework from CISC7204 Data Science Practice: regression pipelines and visual analytics.">
+<meta name="author" content="Fong Chin Wai (Vivi)">
+<meta name="theme-color" content="#1B4F72">
+<meta property="og:title" content="Fong Chin Wai (Vivi) — Data Science Portfolio">
+<meta property="og:description" content="Selected work from CISC7204 Data Science Practice: a full regression pipeline and a visitor-demand study for Macau.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;
+  --tint:#E8F2FB;
+  --tint-2:#D6E9F8;
+  --ink:#0F3D5C;
+  --ink-soft:#2B5876;
+  --body:#33556B;
+  --accent:#2E86C1;
+  --accent-deep:#1B4F72;
+  --line:#C9DEF0;
+  --line-soft:#E1EEF9;
+  --card:#FFFFFF;
+  --shadow:0 1px 2px rgba(27,79,114,.06), 0 10px 30px rgba(27,79,114,.07);
+  --radius:14px;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--body);
+  font-family:"Inter","Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  font-size:16.5px;line-height:1.68;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.serif{font-family:"Source Serif 4",Georgia,"Times New Roman",serif;color:var(--ink);line-height:1.22;font-weight:600}
+h1{font-size:clamp(2.05rem,4.6vw,3.25rem);margin:0 0 .5rem;letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3vw,2.15rem);margin:0 0 .5rem}
+h3{font-size:1.22rem;margin:0 0 .55rem}
+p{margin:0 0 1rem}
+a{color:var(--accent-deep);text-decoration:none;border-bottom:1px solid var(--line)}
+a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+img{max-width:100%;display:block}
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent-deep);color:#fff;padding:10px 16px;z-index:60}
+.skip:focus{left:12px;top:12px}
+
+/* ---------- header ---------- */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid var(--line-soft)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;border:0;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.brand:hover{border:0;color:var(--accent-deep)}
+.brand svg{width:26px;height:26px;color:var(--accent)}
+.navlinks{display:flex;gap:22px;align-items:center;font-size:.94rem}
+.navlinks a{border:0;color:var(--ink-soft);font-weight:500}
+.navlinks a:hover{color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(180deg,#F4FAFF 0%,var(--tint) 62%,#FFFFFF 100%);border-bottom:1px solid var(--line-soft)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center;padding:64px 0 60px}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:600;color:var(--accent);margin:0 0 .9rem}
+.lede{font-size:1.09rem;color:var(--ink-soft);max-width:44ch}
+.chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.84rem;color:var(--ink-soft);margin:2px 0 20px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(46,134,193,.18)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:11px 20px;font-weight:600;font-size:.94rem}
+.btn:hover{border-color:var(--accent);color:var(--accent-deep)}
+.btn-primary{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.btn-primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.hero-figure{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px}
+.hero-figure img{border-radius:8px}
+.hero-figure figcaption{font-size:.8rem;color:var(--body);margin-top:10px;padding-left:2px}
+.hero-linkbar{text-align:center;padding-bottom:46px}
+.hero-linkbar .btn{padding:13px 28px;font-size:1rem}
+
+/* ---------- sections ---------- */
+section{padding:64px 0}
+section.alt{background:var(--tint);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.sec-head{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:end;margin-bottom:34px}
+.sec-head p{color:var(--ink-soft);margin:0}
+
+/* ---------- case cards ---------- */
+.cases{display:grid;gap:30px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 30px 26px}
+.case-head{display:flex;gap:18px;align-items:flex-start;border-bottom:1px solid var(--line-soft);padding-bottom:18px;margin-bottom:22px}
+.case-index{font-family:"Source Serif 4",Georgia,serif;font-size:1.5rem;font-weight:600;color:var(--accent);min-width:44px;line-height:1.1}
+.case-kicker{text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;font-weight:600;color:var(--accent);margin:0 0 .35rem}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.case-grid.wide-text{grid-template-columns:1.15fr .85fr}
+dl.case-dl{margin:0 0 16px}
+dl.case-dl dt{font-weight:600;color:var(--ink);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;margin-top:14px}
+dl.case-dl dt:first-child{margin-top:0}
+dl.case-dl dd{margin:4px 0 0}
+.metric{display:flex;align-items:baseline;gap:12px;background:var(--tint);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:16px 0}
+.metric strong{font-family:"Source Serif 4",Georgia,serif;font-size:1.5rem;color:var(--accent-deep);line-height:1}
+.metric span{font-size:.88rem;color:var(--ink-soft)}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 12px;list-style:none;padding:0}
+.tags li{background:#F2F8FE;border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:.78rem;color:var(--ink-soft)}
+.files{margin:0;padding:0;list-style:none;font-size:.88rem}
+.files li{padding:5px 0;border-top:1px dashed var(--line-soft)}
+.files li:first-child{border-top:0}
+.files .lbl{color:var(--body);display:inline-block;min-width:118px}
+figure{margin:0}
+.figs{display:grid;gap:12px}
+.figs.two{grid-template-columns:1fr 1fr}
+.fig{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.fig img{border-bottom:1px solid var(--line-soft);width:100%}
+.fig figcaption{font-size:.79rem;color:var(--ink-soft);padding:9px 11px;line-height:1.5}
+.note{background:#fff;border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:14px 18px;font-size:.9rem;color:var(--ink-soft);margin:20px 0 0}
+
+/* ---------- approach ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:6px}
+.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}
+.step span{display:inline-block;font-size:.74rem;letter-spacing:.1em;font-weight:600;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+.step h4{font-size:1rem;margin:0 0 8px}
+.step p{font-size:.9rem;margin:0;color:var(--body)}
+.pipeline{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:26px;font-size:.85rem;color:var(--ink-soft)}
+.pipeline i{font-style:normal;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+.pipeline em{color:var(--accent);font-style:normal}
+
+/* ---------- about / contact ---------- */
+.two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
+.factlist{list-style:none;padding:0;margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.factlist li{display:flex;justify-content:space-between;gap:16px;padding:12px 18px;border-top:1px solid var(--line-soft);font-size:.92rem}
+.factlist li:first-child{border-top:0}
+.factlist b{color:var(--ink);font-weight:600}
+.contact-card{background:linear-gradient(150deg,var(--accent-deep),#2E86C1);color:#EAF4FC;border-radius:var(--radius);padding:30px 32px}
+.contact-card h3{color:#fff}
+.contact-card a{color:#fff;border-bottom-color:rgba(255,255,255,.5)}
+.contact-card a:hover{color:#fff;border-bottom-color:#fff}
+.contact-card ul{list-style:none;padding:0;margin:0}
+.contact-card li{padding:7px 0;border-top:1px solid rgba(255,255,255,.22);display:flex;justify-content:space-between;gap:16px;font-size:.93rem}
+.contact-card li:first-child{border-top:0}
+footer.site{background:#F4FAFF;border-top:1px solid var(--line-soft);padding:30px 0;font-size:.85rem;color:var(--body)}
+footer.site .container{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:32px;padding:46px 0}
+  .case-grid,.case-grid.wide-text,.two-col,.sec-head{grid-template-columns:1fr;gap:24px}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .navlinks{gap:14px;font-size:.88rem}
+  .navlinks a.hide-sm{display:none}
+  section{padding:46px 0}
+  .case{padding:22px 18px}
+  .steps,.figs.two{grid-template-columns:1fr}
+  .files .lbl{display:block;min-width:0}
+}
+@media print{
+  header.site,.hero-actions,.btn{display:none}
+  body{font-size:11pt;color:#000}
+  section{padding:14pt 0;break-inside:avoid}
+  .case,.fig,.step,.factlist,.contact-card{break-inside:avoid;box-shadow:none}
+  .contact-card{background:#fff;color:#000;border:1px solid #999}
+  .contact-card h3,.contact-card a{color:#000}
+  a{color:#000;border:0}
+  .hero{background:#fff}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <nav class="nav container" aria-label="Primary navigation">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M5 31 14 9l7 17 5-12 9 17" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="9" r="2.5" fill="currentColor"/><circle cx="21" cy="26" r="2.5" fill="currentColor"/></svg>
+      <span>Fong Chin Wai (Vivi) / Data Science</span>
+    </a>
+    <div class="navlinks">
+      <a href="#work">Selected Work</a>
+      <a class="hide-sm" href="#approach">Approach</a>
+      <a class="hide-sm" href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Data wrangling &middot; Regression modelling &middot; Visual analytics</p>
+        <h1>I turn messy data into decisions I can defend.</h1>
+        <p class="lede">I am Vivi, a master's student in Data Science (Artificial Intelligence Applications) at the University of Macau (ID mc653748). This portfolio collects the work I produced for <strong>CISC7204 Data Science Practice</strong>: a full regression pipeline for pricing prediction, and a study of how visitor demand lines up with bus capacity in Macau.</p>
+        <p class="chip"><span class="dot"></span>CISC7204 Data Science Practice (2026-1) &middot; Macau</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">View selected work</a>
+          <a class="btn" href="mailto:mc65374@um.edu.mo">mc65374@um.edu.mo</a>
+        </div>
+      </div>
+      <figure class="hero-figure">
+        <img src="assets/project/images/fig1_supply_demand_match.png" alt="Chart comparing visitor demand share with bus departure share for each zone of Macau">
+        <figcaption class="serif">From my Preliminary Project: visitor demand share against bus departure share by zone. Evidence first, model second, recommendation last.</figcaption>
+      </figure>
+    </div>
+    <div class="container hero-linkbar">
+      <a class="btn btn-primary" href="https://fongchinwai-vivi.github.io/data-science-project/">Open the data-science-project site</a>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2>Two projects, each with a question and an artifact.</h2>
+        </div>
+        <p>Every case below states the problem, the method, the result and the deliverable, and links to the repository behind it. All analyses were produced for CISC7204 Data Science Practice.</p>
+      </div>
+
+      <div class="cases">
+
+        <!-- 01 -->
+        <article class="case" id="case-01">
+          <div class="case-head">
+            <div class="case-index">01</div>
+            <div>
+              <p class="case-kicker">Assignment 1 &middot; Modules 01&ndash;06</p>
+              <h3>Regression Analysis for Pricing Prediction</h3>
+            </div>
+          </div>
+          <div class="case-grid wide-text">
+            <div>
+              <dl class="case-dl">
+                <dt>Problem</dt>
+                <dd>How accurately can the market price of a product or property &mdash; used cars, laptops, and houses &mdash; be predicted from its features using regression models?</dd>
+                <dt>Method</dt>
+                <dd>Built a six-module pipeline with pandas and scikit-learn: data acquisition, wrangling with logged imputation decisions, EDA with correlation analysis, simple/multiple/polynomial regression, then cross-validation with Ridge regularisation tuned by <code>GridSearchCV</code>. Applied the same workflow to a 21,613-row King County house-price dataset.</dd>
+                <dt>Result</dt>
+                <dd><code>engine-size</code> dominates automobile price (r&nbsp;=&nbsp;0.872), while square footage dominates house price. A well-validated linear model beats more flexible ones: Ridge regression with a grid-searched alpha lifts the test-set R&sup2; compared with plain polynomial regression.</dd>
+                <dt>Deliverable</dt>
+                <dd>Six module notebooks, the datasets and figures they consume, and a README that reproduces the whole analysis. Everything lives in the project repository.</dd>
+              </dl>
+              <ul class="tags"><li>pandas</li><li>scikit-learn</li><li>EDA</li><li>Cross-validation</li><li>Ridge</li><li>GridSearchCV</li></ul>
+              <ul class="files">
+                <li><span class="lbl">Repository</span> <a href="https://github.com/FongChinWai-Vivi/data-science-project" target="_blank" rel="noopener">github.com/FongChinWai-Vivi/data-science-project</a></li>
+                <li><span class="lbl">Notebooks</span> <a href="https://github.com/FongChinWai-Vivi/data-science-project/tree/main/notebooks" target="_blank" rel="noopener">notebooks/ (Modules 01&ndash;06)</a></li>
+                <li><span class="lbl">Status</span> completed</li>
+              </ul>
+            </div>
+            <div class="figs">
+              <figure class="fig">
+                <img src="assets/regression/images/m03_scatter_engine_size_vs_price.png" alt="Scatter plot of engine size against price">
+                <figcaption>Engine size against price &mdash; the strongest single relationship in the automobile dataset (r = 0.872).</figcaption>
+              </figure>
+              <figure class="fig">
+                <img src="assets/regression/images/m04_model_comparison_r2_mse.png" alt="Comparison of R squared and MSE across regression models">
+                <figcaption>R&sup2; and MSE side by side for the simple, multiple and polynomial models.</figcaption>
+              </figure>
+              <figure class="fig">
+                <img src="assets/regression/images/m05_gridsearch_alpha_tuning.png" alt="Grid search output showing the best alpha for ridge regression">
+                <figcaption>GridSearchCV over the ridge penalty improves the test-set R&sup2;.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="case" id="case-02">
+          <div class="case-head">
+            <div class="case-index">02</div>
+            <div>
+              <p class="case-kicker">Preliminary Project &middot; pair work with Fong Hoi Lam (mc654953)</p>
+              <h3>Is Macau's Transport Keeping Up With Its Visitors?</h3>
+            </div>
+          </div>
+          <div class="case-grid">
+            <div>
+              <dl class="case-dl">
+                <dt>Problem</dt>
+                <dd>Macau draws millions of visitors into three very different zones. Is the public bus network carrying them where the demand actually is, or is capacity concentrated in the wrong place and the wrong hour?</dd>
+                <dt>Method</dt>
+                <dd>Assembled a zone-hour panel from visitor arrival records and bus departure records, computed each zone's share of visitor demand against its share of daily departures and stops, and expressed the mismatch as a supply-demand ratio. Profiled demand by hour of day and compared it with departure profiles to locate the timing gap.</dd>
+                <dt>Result</dt>
+                <dd>Capacity is uneven: the Peninsula is over-served with a supply-demand ratio of <strong>1.577</strong>, Taipa &amp; Cotai absorbs most visitor demand but few departures (<strong>0.507</strong>), and Coloane is thinly demanded but well covered (<strong>2.988</strong>). The timing mismatch mirrors this &mdash; visitor demand peaks at <strong>16:00</strong> while departures peak at <strong>08:00</strong>.</dd>
+                <dt>Deliverable</dt>
+                <dd>Proposal document, verification notebook, two submitted figures, and the processed zone-level and hourly matching tables, all in the project repository.</dd>
+              </dl>
+              <ul class="tags"><li>Panel data</li><li>Zone-hour matching</li><li>Share &amp; gap analysis</li><li>Data verification</li><li>Policy recommendation</li></ul>
+              <ul class="files">
+                <li><span class="lbl">Repository</span> <a href="https://github.com/FongChinWai-Vivi/CISC7204-MC653748-2026GitHub" target="_blank" rel="noopener">github.com/FongChinWai-Vivi/CISC7204-MC653748-2026GitHub</a></li>
+                <li><span class="lbl">Status</span> completed</li>
+              </ul>
+            </div>
+            <div class="figs">
+              <figure class="fig">
+                <img src="assets/project/images/fig1_supply_demand_match.png" alt="Supply and demand matching chart for the three zones of Macau">
+                <figcaption>Figure 1 &mdash; demand share against supply share by zone, with the supply-demand ratio that drives the recommendation.</figcaption>
+              </figure>
+              <figure class="fig">
+                <img src="assets/project/images/fig2_district_event_shuttle.png" alt="Chart of visitor distribution by district with event and shuttle bus analysis">
+                <figcaption>Figure 2 &mdash; how visitors distribute across districts, and what event and shuttle services add on top of the scheduled network.</figcaption>
+              </figure>
+              <div class="metric"><strong>0.507</strong><span>supply-demand ratio in Taipa &amp; Cotai, against 1.577 on the Peninsula</span></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="approach">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Approach</p>
+          <h2>How I work through a dataset.</h2>
+        </div>
+        <p>The same four moves run through every case above. What changes is the data; what stays fixed is the order of the decisions and the fact that each one leaves a trace.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span>Step 01</span>
+          <h4>Acquire and profile</h4>
+          <p>Load the raw file as it is, restore meaning (headers, units, placeholders), then look before touching: types, counts, distributions, cardinality. Nothing is cleaned until the shape of the mess is known.</p>
+        </div>
+        <div class="step">
+          <span>Step 02</span>
+          <h4>Clean with logged decisions</h4>
+          <p>Every imputation, conversion and drop is a judgement, not a chore. Missing values are filled only where the field is genuinely recoverable; rows are dropped only when the target is absent; conversions keep units visible in the column name.</p>
+        </div>
+        <div class="step">
+          <span>Step 03</span>
+          <h4>Model, then test honestly</h4>
+          <p>Start with the simplest model that can answer the question. Measure against held-out data, not the training set. When a flexible model such as a polynomial loses to multiple linear regression, the flexible model is the one that goes.</p>
+        </div>
+        <div class="step">
+          <span>Step 04</span>
+          <h4>Communicate the evidence</h4>
+          <p>Charts are chosen to answer a question: a scatter for a relationship, a box plot for a distribution, a heatmap for a matrix, a ratio bar for a mismatch. The conclusion has to be visible without reading the code.</p>
+        </div>
+      </div>
+      <div class="pipeline">
+        <i>Raw data</i><em>&rarr;</em><i>Profile</i><em>&rarr;</em><i>Impute &amp; encode</i><em>&rarr;</em><i>Correlation &amp; EDA</i><em>&rarr;</em><i>Regression</i><em>&rarr;</em><i>Cross-validation &amp; regularisation</i><em>&rarr;</em><i>Recommendation</i>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Fong Chin Wai (Vivi)</h2>
+        </div>
+        <p>Master's student in Data Science (Artificial Intelligence Applications) at the University of Macau, working at the intersection of data analysis, visualisation and reproducible workflows.</p>
+      </div>
+      <div class="two-col">
+        <div>
+          <p>I am a master's student in Data Science, specialising in Artificial Intelligence Applications, at the University of Macau. Most of my coursework sits where software meets data: turning raw, imperfect files into something a reader can act on.</p>
+          <p>What I care about is the part after the model trains: knowing why a result is trustworthy, where it breaks, and what decision it actually supports.</p>
+        </div>
+        <div>
+          <ul class="factlist">
+            <li><b>Name</b><span>Fong Chin Wai (Vivi)</span></li>
+            <li><b>Student ID</b><span>mc653748</span></li>
+            <li><b>Programme</b><span>Master's Degree Programme &middot; Data Science</span></li>
+            <li><b>Specialization</b><span>Artificial Intelligence Applications</span></li>
+            <li><b>University</b><span>University of Macau</span></li>
+            <li><b>Course</b><span>CISC7204 Data Science Practice (2026-1)</span></li>
+            <li><b>Toolkit</b><span>Python &middot; pandas &middot; NumPy &middot; Matplotlib &middot; scikit-learn &middot; Jupyter &middot; Git</span></li>
+            <li><b>Location</b><span>Macau SAR, China</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="contact">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let us talk about data.</h2>
+          <p>I am happy to walk through any of the notebooks here, explain a modelling choice, or discuss internships and student projects in data analysis and visualisation.</p>
+        </div>
+        <div class="contact-card">
+          <h3>Reach me</h3>
+          <ul>
+            <li><span>Email</span><a href="mailto:mc65374@um.edu.mo">mc65374@um.edu.mo</a></li>
+            <li><span>GitHub</span><a href="https://github.com/FongChinWai-Vivi" target="_blank" rel="noopener">github.com/FongChinWai-Vivi</a></li>
+            <li><span>Portfolio</span><a href="https://fongchinwai-vivi.github.io/data-science-portfolio/" target="_blank" rel="noopener">fongchinwai-vivi.github.io/data-science-portfolio/</a></li>
+            <li><span>Location</span><span>Macau SAR, China</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <span>&copy; 2026 Fong Chin Wai (Vivi) &middot; CISC7204 Data Science Practice (Practice 9)</span>
+    <span>Built with GitHub Pages</span>
+  </div>
+</footer>
+
+</body>
+</html>
