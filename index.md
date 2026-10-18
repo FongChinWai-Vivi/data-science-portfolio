@@ -1,13 +1,4 @@
----
-AIGC:
-    Label: "1"
-    ContentProducer: 001191440300708461136T1XGW3
-    ProduceID: 8aaebaa239fa14c1cf5eb03fd99189ca_2d20c938c95a11f196f9525400248c00
-    ReservedCode1: LtlHVhdqR6Bc04okIgHUCTN/u4wZU6+RPEusmSpaHv3RH4fhcuxgwdYjftHdIO4uJD4tewbkW+dA/yNKU6/wj6kHk19Dxzd71RHA3G9gbplHDX1l3Hd8CNcZMvk1wzfMD5LKi1GA276zwMk22HJMWi8biVxRE8kk/rLzE0lFGTxJumm9CtIRYDS/d+A=
-    ContentPropagator: 001191440300708461136T1XGW3
-    PropagateID: 8aaebaa239fa14c1cf5eb03fd99189ca_2d20c938c95a11f196f9525400248c00
-    ReservedCode2: LtlHVhdqR6Bc04okIgHUCTN/u4wZU6+RPEusmSpaHv3RH4fhcuxgwdYjftHdIO4uJD4tewbkW+dA/yNKU6/wj6kHk19Dxzd71RHA3G9gbplHDX1l3Hd8CNcZMvk1wzfMD5LKi1GA276zwMk22HJMWi8biVxRE8kk/rLzE0lFGTxJumm9CtIRYDS/d+A=
----
+
 
 # Fong Chin Wai (Vivi)
 
@@ -93,4 +84,4 @@ more sufficient — Coloane shows the highest supply–demand ratio (2.99).*
 ---
 
 *Hosted with GitHub Pages. Built for CISC7204 Practice 9 (Build Your Data Science Portfolio).*
-*（内容由AI生成，仅供参考）*
+
