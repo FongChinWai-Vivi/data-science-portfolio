@@ -2,6 +2,7 @@
 
 Personal data science portfolio published with GitHub Pages.
 
+- **Live website:** [https://fongchinwai-vivi.github.io/data-science-portfolio/](https://fongchinwai-vivi.github.io/data-science-portfolio/) — browse this portfolio on GitHub Pages
 - **Website entry:** [`index.md`](index.md) (GitHub Pages serves the repository root)
 - **Projects showcased:**
   1. Regression Analysis for Pricing Prediction — [data-science-project](https://github.com/FongChinWai-Vivi/data-science-project)

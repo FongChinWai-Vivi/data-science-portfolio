@@ -238,6 +238,8 @@ footer.site .container{display:flex;justify-content:space-between;gap:18px;flex-
                 <dd><code>engine-size</code> dominates automobile price (r&nbsp;=&nbsp;0.872), while square footage dominates house price. A well-validated linear model beats more flexible ones: Ridge regression with a grid-searched alpha lifts the test-set R&sup2; compared with plain polynomial regression.</dd>
                 <dt>Deliverable</dt>
                 <dd>Six module notebooks, the datasets and figures they consume, and a README that reproduces the whole analysis. Everything lives in the project repository.</dd>
+                <dt>Limitation</dt>
+                <dd>Trained on 1985 automobile data and a 2014&ndash;2015 housing window; the workflow transfers to other markets, the absolute price levels do not.</dd>
               </dl>
               <ul class="tags"><li>pandas</li><li>scikit-learn</li><li>EDA</li><li>Cross-validation</li><li>Ridge</li><li>GridSearchCV</li></ul>
               <ul class="files">
@@ -283,6 +285,8 @@ footer.site .container{display:flex;justify-content:space-between;gap:18px;flex-
                 <dd>Capacity is uneven: the Peninsula is over-served with a supply-demand ratio of <strong>1.577</strong>, Taipa &amp; Cotai absorbs most visitor demand but few departures (<strong>0.507</strong>), and Coloane is thinly demanded but well covered (<strong>2.988</strong>). The timing mismatch mirrors this &mdash; visitor demand peaks at <strong>16:00</strong> while departures peak at <strong>08:00</strong>.</dd>
                 <dt>Deliverable</dt>
                 <dd>Proposal document, verification notebook, two submitted figures, and the processed zone-level and hourly matching tables, all in the project repository.</dd>
+                <dt>Limitation</dt>
+                <dd>Uses bus departures as the supply proxy; private cars, taxis, light rail and walking are outside scope, and the analysis covers a limited data window.</dd>
               </dl>
               <ul class="tags"><li>Panel data</li><li>Zone-hour matching</li><li>Share &amp; gap analysis</li><li>Data verification</li><li>Policy recommendation</li></ul>
               <ul class="files">
